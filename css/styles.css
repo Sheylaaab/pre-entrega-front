@@ -1,0 +1,405 @@
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header y Nav */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 15px 5%;
+    border-bottom: 1px solid #f0f0f0; 
+    background: #ffffff;
+}
+.main-header {
+    background-color: #ffffff; 
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex !important;
+    justify-content: space-between !important; /* Empuja el logo a la izquierda y el nav a la derecha */
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 1200px; /* O el ancho de tu sitio */
+    margin: 0 auto;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+.logo-link {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Evita que el logo se achique si el menú es largo */
+}
+
+.logo {
+    height: 70px; 
+    width: auto;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: flex-end; /* Asegura que el contenido del nav se pegue a la derecha */
+    flex-grow: 1; /* Le permite ocupar el espacio restante para empujar al logo */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 35px; /* Espacio entre secciones */
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li a {
+    text-decoration: none !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.main-nav ul li a:hover {
+    color: #3498db !important; 
+}
+body, p, input, textarea, button {
+    font-family: 'Inter', sans-serif !important;
+}
+
+
+h1, h2, h3, .main-nav ul li a {
+    font-family: 'Montserrat', sans-serif !important;
+    letter-spacing: -0.5px; 
+}
+/* Grid de Ecommerce */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Estilos del Formulario */
+
+.contacto-section {
+    padding: 80px 0;
+    background-color: #f9f9f9; 
+}
+
+.contacto-container {
+    max-width: 600px; 
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.btn-enviar {
+    background-color: #27ae60; 
+    color: white;
+    border: none;
+    padding: 15px 0;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: #2ecc71;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/* Ajustamos la cuadrícula para que las tarjetas tengan más espacio */
+section#productos .productos-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important; /* Se ajustan solas y crecen */
+    gap: 40px !important;
+    padding: 0 5% 80px;
+    max-width: 1300px; 
+    margin: 0 auto;
+}
+
+
+section#productos .producto-card {
+    background: #ffffff; 
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    
+    
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+    border: 1px solid #f0f0f0; /* Un borde casi invisible para definir la forma */
+}
+
+/* El efecto al pasar el mouse */
+section#productos .producto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-color: #3498db; /* Opcional: el borde se ilumina */
+}
+
+
+.producto-img img {
+    width: 100%;
+    height: 300px; /* Aumentamos la altura de la imagen */
+    object-fit: cover; /* Cambiamos a 'cover' para que llene todo el espacio */
+    margin-bottom: 0;
+}
+
+/* Espaciado para la info debajo de la imagen */
+.producto-info {
+    padding: 25px;
+    text-align: center;
+}
+.producto-info h3 {
+    font-weight: 700 !important;
+    font-size: 1.6rem !important;
+    color: #2c3e50;
+}
+
+
+.producto-info p {
+    font-size: 1rem !important;
+    line-height: 1.2 !important; /* Reducimos el espacio entre líneas */
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    min-height: 3.6em; /* Esto es TRUCO PRO: asegura que todas las cajas midan lo mismo aunque tengan menos texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.precio {
+    font-size: 1.5rem !important;
+    font-weight: 700;
+    color: #3498db;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.btn-comprar {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    width: 100%; /* Que ocupe todo el ancho de la info */
+}
+
+.btn-comprar:hover {
+    background: #2980b9;
+}
+
+.hero {
+    /* Forzamos el ancho total de la pantalla */
+    width: 100%;
+    min-height: 500px; /* Altura similar a la de eSUN */
+    
+    /* Imagen de fondo con filtro oscuro para que el texto resalte */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://formlabs.com/_next/image/?url=https%3A%2F%2Fformlabs-media.formlabs.com%2Ffiler_public_thumbnails%2Ffiler_public%2F4d%2F7a%2F4d7a1b81-e7aa-49eb-8d78-5922e5ab9a73%2Foptimized_for_web_jpeg-03072024_dsl_core_set_311.jpg__1354x0_q85_subsampling-2.jpg&w=3840&q=75') no-repeat center center;
+    background-size: cover; /* Esto hace que la imagen cubra todo el espacio sin deformarse */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    
+    /* Eliminamos cualquier margen que pueda venir del body */
+    margin: 0;
+}
+
+.hero-content h1 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 3.8rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase; /* Mayúsculas para dar fuerza */
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.2rem !important;
+    font-weight: 400 !important; /* Fino para que no compita con el H1 */
+    text-transform: none !important; /* Quitamos cualquier mayúscula rara */
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+.intro-text {
+    text-align: center;
+    padding: 80px 20px; /* Mucho espacio arriba y abajo */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-text h2 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 2.2rem !important;
+    font-weight: 600 !important; /* Semi-bold, no extra-bold */
+    color: #2c3e50;
+    text-transform: none !important; /* <--- ESTO arregla lo de las mayúsculas */
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.6;
+    color: #555;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+
+.cart-container {
+    position: relative; /* Necesario para que el número rojo no flote a cualquier lado */
+    display: flex;
+    align-items: center;
+}
+
+#cart-icon {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+}
+
+#cart-icon:hover {
+    color: #3498db;
+    transform: scale(1.1); /* Esto hace que el icono crezca un 10% al pasar el mouse */
+    display: inline-block; 
+}
+
+/* El circulito del contador */
+#cart-count {
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    background-color: #ff4d4d; /* Rojo Toy Theory */
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff; /* Le da ese toque pro que lo separa del fondo */
+}
+
+h1, h2, h3 {
+    font-weight: 700 !important; /* Bajamos de 900 a 700 */
+    letter-spacing: 0.5px; /* Separamos un pelín las letras para que respiren */
+}
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif !important;
+    letter-spacing: -0.02em; /* Esto junta un poquito las letras para un look más Pro */
+}
+
+.hero-content h1 {
+    font-size: 4rem !important; /* Un poquito menos que antes para que no sea tan invasivo */
+}
+
+@media (max-width: 768px) {
+    /* Achicamos el título del banner */
+    .hero-content h1 {
+        font-size: 2.8rem !important;
+    }
+
+    /* El contenedor del header permite que los elementos se amontonen si es necesario */
+    .header-container {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* El header ahora pone los elementos uno debajo del otro */
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Centramos el logo */
+    .logo-link {
+        margin-bottom: 5px;
+    }
+
+    /* El menú se vuelve vertical y se centra */
+    .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* Título aún más chico para celular */
+    .hero-content h1 {
+        font-size: 2.2rem !important;
+        letter-spacing: 0;
+    }
+
+    /* El texto de "Especialistas en resina" se ajusta */
+    .intro-text h2 {
+        font-size: 1.8rem !important;
+    }
+}
