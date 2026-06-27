@@ -21,6 +21,7 @@ header {
     border-bottom: 1px solid #f0f0f0; 
     background: #ffffff;
 }
+
 .main-header {
     background-color: #ffffff; 
     padding: 10px 0;
@@ -31,37 +32,42 @@ header {
 }
 
 .header-container {
-    display: flex !important;
-    justify-content: space-between !important; /* Empuja el logo a la izquierda y el nav a la derecha */
-    align-items: center !important;
-    width: 100% !important;
-    max-width: 1200px; /* O el ancho de tu sitio */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; 
     margin: 0 auto;
     padding: 10px 20px;
     box-sizing: border-box;
 }
+
+/* --- CONTROL DEL LOGO EN ESCRITORIO --- */
 .logo-link {
     display: flex;
     align-items: center;
-    flex-shrink: 0; /* Evita que el logo se achique si el menú es largo */
+    flex-shrink: 0; 
+    max-width: 160px;
 }
 
-.logo {
-    height: 70px; 
-    width: auto;
+.logo-img {
+    width: 100% !important;
+    height: 70px !important; 
+    object-fit: contain !important; 
+    display: block;
 }
 
 .main-nav {
     display: flex;
-    justify-content: flex-end; /* Asegura que el contenido del nav se pegue a la derecha */
-    flex-grow: 1; /* Le permite ocupar el espacio restante para empujar al logo */
+    justify-content: flex-end; 
+    flex-grow: 1; 
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 35px; /* Espacio entre secciones */
+    gap: 35px; 
     margin: 0;
     padding: 0;
 }
@@ -78,15 +84,16 @@ header {
 .main-nav ul li a:hover {
     color: #3498db !important; 
 }
+
 body, p, input, textarea, button {
     font-family: 'Inter', sans-serif !important;
 }
-
 
 h1, h2, h3, .main-nav ul li a {
     font-family: 'Montserrat', sans-serif !important;
     letter-spacing: -0.5px; 
 }
+
 /* Grid de Ecommerce */
 .grid-productos {
     display: grid;
@@ -104,7 +111,6 @@ h1, h2, h3, .main-nav ul li a {
 }
 
 /* Estilos del Formulario */
-
 .contacto-section {
     padding: 80px 0;
     background-color: #f9f9f9; 
@@ -152,17 +158,15 @@ input, textarea {
     border-radius: 4px;
 }
 
-
-/* Ajustamos la cuadrícula para que las tarjetas tengan más espacio */
+/* Cuadrícula de productos */
 section#productos .productos-container {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important; /* Se ajustan solas y crecen */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important; 
     gap: 40px !important;
     padding: 0 5% 80px;
     max-width: 1300px; 
     margin: 0 auto;
 }
-
 
 section#productos .producto-card {
     background: #ffffff; 
@@ -171,45 +175,40 @@ section#productos .producto-card {
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
-    
-    
     box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
-    border: 1px solid #f0f0f0; /* Un borde casi invisible para definir la forma */
+    border: 1px solid #f0f0f0; 
 }
 
-/* El efecto al pasar el mouse */
 section#productos .producto-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    border-color: #3498db; /* Opcional: el borde se ilumina */
+    border-color: #3498db; 
 }
-
 
 .producto-img img {
     width: 100%;
-    height: 300px; /* Aumentamos la altura de la imagen */
-    object-fit: cover; /* Cambiamos a 'cover' para que llene todo el espacio */
+    height: 300px; 
+    object-fit: cover; 
     margin-bottom: 0;
 }
 
-/* Espaciado para la info debajo de la imagen */
 .producto-info {
     padding: 25px;
     text-align: center;
 }
+
 .producto-info h3 {
     font-weight: 700 !important;
     font-size: 1.6rem !important;
     color: #2c3e50;
 }
 
-
 .producto-info p {
     font-size: 1rem !important;
-    line-height: 1.2 !important; /* Reducimos el espacio entre líneas */
+    line-height: 1.2 !important; 
     color: #7f8c8d;
     margin-bottom: 15px;
-    min-height: 3.6em; /* Esto es TRUCO PRO: asegura que todas las cajas midan lo mismo aunque tengan menos texto */
+    min-height: 3.6em; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -232,49 +231,45 @@ section#productos .producto-card:hover {
     cursor: pointer;
     font-weight: bold;
     transition: background 0.3s;
-    width: 100%; /* Que ocupe todo el ancho de la info */
+    width: 100%; 
 }
 
 .btn-comprar:hover {
     background: #2980b9;
 }
 
+/* Seccion Hero */
 .hero {
-    /* Forzamos el ancho total de la pantalla */
     width: 100%;
-    min-height: 500px; /* Altura similar a la de eSUN */
-    
-    /* Imagen de fondo con filtro oscuro para que el texto resalte */
+    min-height: 500px; 
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                 url('https://formlabs.com/_next/image/?url=https%3A%2F%2Fformlabs-media.formlabs.com%2Ffiler_public_thumbnails%2Ffiler_public%2F4d%2F7a%2F4d7a1b81-e7aa-49eb-8d78-5922e5ab9a73%2Foptimized_for_web_jpeg-03072024_dsl_core_set_311.jpg__1354x0_q85_subsampling-2.jpg&w=3840&q=75') no-repeat center center;
-    background-size: cover; /* Esto hace que la imagen cubra todo el espacio sin deformarse */
-    
+    background-size: cover; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    
-    /* Eliminamos cualquier margen que pueda venir del body */
     margin: 0;
 }
 
 .hero-content h1 {
     font-family: 'Poppins', sans-serif !important;
-    font-size: 3.8rem !important;
+    font-size: 4rem !important; 
     font-weight: 800 !important;
-    text-transform: uppercase; /* Mayúsculas para dar fuerza */
+    text-transform: uppercase; 
     letter-spacing: -1px;
     line-height: 1.1;
     margin-bottom: 15px;
+    color: white !important;
 }
 
 .hero-content p {
     font-family: 'Inter', sans-serif !important;
     font-size: 1.2rem !important;
-    font-weight: 400 !important; /* Fino para que no compita con el H1 */
-    text-transform: none !important; /* Quitamos cualquier mayúscula rara */
-    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400 !important; 
+    text-transform: none !important; 
+    color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .hero-icons {
@@ -284,9 +279,10 @@ section#productos .producto-card:hover {
     margin-top: 30px;
     font-size: 1.1rem;
 }
+
 .intro-text {
     text-align: center;
-    padding: 80px 20px; /* Mucho espacio arriba y abajo */
+    padding: 80px 20px; 
     max-width: 800px;
     margin: 0 auto;
 }
@@ -294,9 +290,9 @@ section#productos .producto-card:hover {
 .intro-text h2 {
     font-family: 'Poppins', sans-serif !important;
     font-size: 2.2rem !important;
-    font-weight: 600 !important; /* Semi-bold, no extra-bold */
+    font-weight: 600 !important; 
     color: #2c3e50;
-    text-transform: none !important; /* <--- ESTO arregla lo de las mayúsculas */
+    text-transform: none !important; 
     margin-bottom: 20px;
 }
 
@@ -310,13 +306,12 @@ section#productos .producto-card:hover {
     margin: 0 auto;
 }
 
-
 .cart-container {
-    position: relative; /* Necesario para que el número rojo no flote a cualquier lado */
+    position: relative; 
     display: flex;
     align-items: center;
+    margin-left: 20px; /* Separa el carrito del último enlace del menú en PC */
 }
-
 #cart-icon {
     font-size: 1.2rem;
     color: #2c3e50;
@@ -326,17 +321,16 @@ section#productos .producto-card:hover {
 
 #cart-icon:hover {
     color: #3498db;
-    transform: scale(1.1); /* Esto hace que el icono crezca un 10% al pasar el mouse */
+    transform: scale(1.1); 
     display: inline-block; 
 }
 
-/* El circulito del contador */
 #cart-count {
     position: absolute;
     top: -10px;
     right: -12px;
-    background-color: #ff4d4d; /* Rojo Toy Theory */
-    color: white;
+    background-color: #2ec4b6 !important; 
+    color: #ffffff !important; 
     font-size: 0.7rem;
     font-weight: bold;
     min-width: 18px;
@@ -345,60 +339,160 @@ section#productos .producto-card:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #fff; /* Le da ese toque pro que lo separa del fondo */
+    border: 2px solid #fff; 
+    z-index: 10;
 }
 
 h1, h2, h3 {
-    font-weight: 700 !important; /* Bajamos de 900 a 700 */
-    letter-spacing: 0.5px; /* Separamos un pelín las letras para que respiren */
-}
-h1, h2, h3 {
+    font-weight: 700 !important; 
     font-family: 'Poppins', sans-serif !important;
-    letter-spacing: -0.02em; /* Esto junta un poquito las letras para un look más Pro */
+    letter-spacing: -0.02em; 
 }
 
-.hero-content h1 {
-    font-size: 4rem !important; /* Un poquito menos que antes para que no sea tan invasivo */
+/* Oculto por defecto en computadoras */
+.menu-toggle {
+    display: none !important;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
+
+/* ========================================================
+   ESTILOS RESPONSIVE (MÓVIL / TABLETS HASTA 768px)
+   ======================================================== */
 @media (max-width: 768px) {
-    /* Achicamos el título del banner */
+    
+    .main-header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 8px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        z-index: 10000;
+    }
+
+    .header-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 16px; 
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* --- CONTROL DEL LOGO EN MÓVIL --- */
+    .logo-link {
+        max-width: 100px;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-img {
+        height: 45px !important; 
+        width: auto !important;
+        max-width: 100%;
+        object-fit: contain !important;
+    }
+
+    /* Botón Hamburguesa visible solo en celular */
+    .menu-toggle {
+        display: block !important;
+        font-size: 1.6rem;
+        color: #333333;
+        padding: 6px;
+        margin-left: 12px;
+        order: 3; 
+    }
+
+    /* Contenedor del Carrito Móvil */
+    .cart-container {
+        order: 2; 
+        display: flex;
+        align-items: center;
+        background-color: #f8f9fa;
+        padding: 6px 10px;
+        border-radius: 6px;
+        margin-left: auto;
+    }
+    
+
+    .cart-link {
+        font-size: 1.4rem;
+        color: #333333;
+        position: relative;
+        text-decoration: none;
+    }
+    
+    #cart-count {
+        top: -6px !important;
+        right: -8px !important;
+    }
+
+    /* Menú Desplegable Móvil */
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        z-index: 9999;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .main-nav.active {
+        display: block !important;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding: 8px 0;
+        margin: 0;
+        gap: 0; 
+    }
+
+    .main-nav ul li {
+        text-align: left;
+        width: 100%;
+        border-bottom: 1px solid #f8f9fa;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 18px 24px;
+        font-weight: 500;
+        color: #333333;
+        font-size: 1rem;
+    }
+
     .hero-content h1 {
         font-size: 2.8rem !important;
     }
 
-    /* El contenedor del header permite que los elementos se amontonen si es necesario */
-    .header-container {
-        padding: 10px 15px;
+    @keyframes slideDown {
+        from { transform: translateY(-10px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
     }
 }
 
+/* ========================================================
+   ESTILOS RESPONSIVE (MÓVIL PEQUEÑO HASTA 480px)
+   ======================================================== */
 @media (max-width: 480px) {
-    /* El header ahora pone los elementos uno debajo del otro */
     .header-container {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row; 
     }
 
-    /* Centramos el logo */
-    .logo-link {
-        margin-bottom: 5px;
-    }
-
-    /* El menú se vuelve vertical y se centra */
-    .main-nav ul {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-
-    /* Título aún más chico para celular */
     .hero-content h1 {
         font-size: 2.2rem !important;
         letter-spacing: 0;
     }
 
-    /* El texto de "Especialistas en resina" se ajusta */
     .intro-text h2 {
         font-size: 1.8rem !important;
     }

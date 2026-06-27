@@ -248,3 +248,48 @@ body {
         gap: 15px;
     }
 }
+/* --- MENÚ HAMBURGUESA RESPONSIVE --- */
+
+/* Por defecto en pantallas grandes, el botón está oculto */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #333; /* Podés cambiar el color para que combine con tu estética */
+    cursor: pointer;
+}
+
+/* Cuando la pantalla mide menos de 768px (Celulares y Tablets) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Aparece el botón de las 3 rayitas */
+    }
+
+    .main-nav {
+        display: none; /* Ocultamos el menú horizontal original */
+        position: absolute;
+        top: 70px; /* Ajustalo según el alto de tu header */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff; /* Fondo del menú desplegable */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    /* Clase que agregará JavaScript al hacer clic para mostrar el menú */
+    .main-nav.active {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Los enlaces se ponen uno abajo del otro */
+        padding: 20px;
+    }
+
+    .main-nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+}
+

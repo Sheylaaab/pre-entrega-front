@@ -107,6 +107,16 @@
             </aside>
         </div>
     </main>
+    <div id="success-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(4px);">
+        <div class="modal-content" style="background: #fff; padding: 40px; border-radius: 12px; text-align: center; max-width: 450px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.2); font-family: 'Poppins', sans-serif;">
+            <div class="modal-icon" style="font-size: 4rem; color: #2ec4b6; margin-bottom: 15px;">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2 style="margin-bottom: 10px; color: #222; font-weight: 800;">¡Pedido Procesado!</h2>
+            <p style="color: #666; font-size: 0.95rem; line-height: 1.5; margin-bottom: 25px;">Gracias por tu compra en <strong>Toy Theory</strong>. Tu pedido de figuras de resina de alta precisión está siendo preparado por nuestros especialistas.</p>
+            <button id="btn-modal-close" style="background: #2ec4b6; color: white; border: none; padding: 12px 30px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%; transition: background 0.2s;">Volver al Catálogo</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
