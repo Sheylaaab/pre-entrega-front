@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Theory - Mi Carrito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/carrito.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="index.html" class="logo-link">
+                    <img src="img/logo.jpeg" alt="Toy Theory Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="index.html#catalogo">CATÁLOGO</a></li>
+                    <li><a href="index.html#contacto">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="cart-container">
+            <a href="carrito.html" id="cart-icon" class="cart-link">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
+            </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="cart-page-container">
+        <h1 class="page-title">Tu Carrito de Compras</h1>
+
+        <div class="cart-layout">
+            <section class="cart-items-section">
+                
+                <div class="cart-item">
+                    <div class="item-img-container">
+                        <img src="img/productos1.jpeg" alt="Megumi Fushiguro">
+                    </div>
+                    <div class="item-details">
+                        <h3>Megumi Fushiguro</h3>
+                        <p class="item-spec">Escala: 1/10 | Material: Resina</p>
+                        <button class="btn-remove"><i class="fa-solid fa-trash-can"></i> Eliminar</button>
+                    </div>
+                    <div class="item-quantity">
+                        <label>Cant:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <div class="item-price">
+                        <span>$60.000</span>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div class="item-img-container">
+                        <img src="img/productos 2.jpeg" alt="Roronoa Zoro">
+                    </div>
+                    <div class="item-details">
+                        <h3>Roronoa Zoro</h3>
+                        <p class="item-spec">Escala: 1/10 | Material: Resina</p>
+                        <button class="btn-remove"><i class="fa-solid fa-trash-can"></i> Eliminar</button>
+                    </div>
+                    <div class="item-quantity">
+                        <label>Cant:</label>
+                        <input type="number" value="1" min="1">
+                    </div>
+                    <div class="item-price">
+                        <span>$75.000</span>
+                    </div>
+                </div>
+
+                <a href="index.html" class="continue-shopping">← Seguir comprando productos</a>
+            </section>
+
+            <aside class="cart-summary-section">
+                <div class="summary-card">
+                    <h2>Resumen del Pedido</h2>
+                    
+                    <div class="summary-row">
+                        <span>Subtotal (2 productos)</span>
+                        <span>$135.000</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Envío (Buenos Aires)</span>
+                        <span class="free-shipping">Gratis</span>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-row total-row">
+                        <span>Total</span>
+                        <span>$135.000</span>
+                    </div>
+
+                    <button class="btn-checkout">Proceder al Pago</button>
+                    
+                    <div class="payment-methods">
+                        <p>Aceptamos MercadoPago, Tarjetas de Crédito y Débito</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

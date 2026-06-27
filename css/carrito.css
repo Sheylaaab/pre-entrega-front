@@ -1,0 +1,250 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* Header Reutilizado (Asegura consistencia con tu index) */
+.main-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo-img {
+    height: 45px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.cart-link {
+    position: relative;
+    color: #222;
+    font-size: 1.3rem;
+}
+
+#cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* Estructura de la Página del Carrito */
+.cart-page-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #111;
+}
+
+/* LAYOUT DE DOS COLUMNAS (FLEXBOX) */
+.cart-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Columna Izquierda (Productos) */
+.cart-items-section {
+    flex: 2; /* Ocupa 2 partes del espacio */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.item-img-container img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.item-details {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.item-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.item-spec {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.btn-remove {
+    background: none;
+    border: none;
+    color: #c0392b;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.btn-remove:hover {
+    color: #e74c3c;
+}
+
+.item-quantity input {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.item-price {
+    font-weight: bold;
+    font-size: 1.1rem;
+    min-width: 90px;
+    text-align: right;
+}
+
+.continue-shopping {
+    margin-top: 10px;
+    color: #2980b9;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Columna Derecha (Resumen/Aside) */
+.cart-summary-section {
+    flex: 1; /* Ocupa 1 parte del espacio */
+}
+
+.summary-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    position: sticky;
+    top: 100px;
+}
+
+.summary-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.free-shipping {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.summary-divider {
+    height: 1px;
+    background-color: #eee;
+    margin: 15px 0;
+}
+
+.total-row {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 25px;
+}
+
+.btn-checkout {
+    width: 100%;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-checkout:hover {
+    background-color: #219653;
+}
+
+.payment-methods {
+    margin-top: 15px;
+    font-size: 0.75rem;
+    color: #888;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* --- MEDIA QUERY (DISEÑO RESPONSIVE) --- */
+@media (max-width: 868px) {
+    .cart-layout {
+        flex-direction: column; /* Apila el resumen abajo de los productos en celulares */
+    }
+
+    .cart-summary-section {
+        width: 100%;
+    }
+    
+    .cart-item {
+        flex-wrap: wrap; /* Permite que los elementos internos del producto se acomoden si no hay espacio */
+        gap: 15px;
+    }
+}
