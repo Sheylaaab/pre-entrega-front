@@ -3,15 +3,69 @@ let contador = 0;
 document.addEventListener('DOMContentLoaded', () => {
     const cartCountElement = document.getElementById('cart-count');
 
+    // ========================================================
+    // CONEXIÓN CON TU PROPIO ARCHIVO JSON DE PRODUCTOS
+    // ========================================================
+    const URL_API = './productos.json'; // Ahora apunta a tu archivo local
+    const contenedorProductos = document.getElementById('contenedor-productos');
+
+    // 1. Función asincrónica para pedirle los datos a tu JSON local
+    async function cargarProductosDesdeAPI() {
+        try {
+            const respuesta = await fetch(URL_API);
+            const productos = await respuesta.json();
+            renderizarProductosTienda(productos);
+        } catch (error) {
+            console.error("Error al cargar el archivo JSON:", error);
+            if (contenedorProductos) {
+                contenedorProductos.innerHTML = `<p style="text-align:center; width:100%;">Hubo un error al cargar el catálogo de resinas.</p>`;
+            }
+        }
+    }
+
+    // 2. Función para inyectar las tarjetas reales del JSON en tu HTML
+    function renderizarProductosTienda(listaProductos) {
+        if (!contenedorProductos) return;
+
+        contenedorProductos.innerHTML = '';
+
+        listaProductos.forEach((producto) => {
+            const tarjetaHTML = document.createElement('div');
+            tarjetaHTML.className = 'producto-card';
+            
+            // Estructura idéntica a tus clases, con precio directo en pesos
+            tarjetaHTML.innerHTML = `
+                <div class="producto-img">
+                    <img src="${producto.image}" alt="${producto.title}">
+                </div>
+                <div class="producto-info">
+                    <h3>${producto.title}</h3>
+                    <p>${producto.description}</p> 
+                    <span class="precio">$${producto.price.toLocaleString('es-AR')}</span>
+                    <button class="btn-comprar" data-id="${producto.id}">Comprar</button>
+                </div>
+            `;
+
+            contenedorProductos.appendChild(tarjetaHTML);
+        });
+
+        // Activamos los eventos en los nuevos botones agregados
+        asignarEventosBotonesCompra();
+    }
+
+    if (contenedorProductos) {
+        cargarProductosDesdeAPI();
+    }
+
     actualizarContadorMenu();
 
     // ========================================================
     // LÓGICA PARA LA TIENDA (INDEX.HTML)
     // ========================================================
-    const botonesAgregar = document.querySelectorAll('.btn-comprar');
+   function asignarEventosBotonesCompra() {
+        const botonesAgregar = document.querySelectorAll('.btn-comprar');
 
-    if (botonesAgregar.length > 0) {
-        botonesAgregar.forEach((boton, index) => {
+        botonesAgregar.forEach((boton) => {
             boton.addEventListener('click', (e) => {
                 const tarjeta = e.target.closest('.producto-card');
                 if (!tarjeta) return;
@@ -20,11 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const precioLimpio = parseFloat(precioTexto.replace(/[^0-9]/g, ''));
                 const tituloElemento = tarjeta.querySelector('h3');
                 const imgElemento = tarjeta.querySelector('.producto-img img');
+                
+                const idProducto = e.target.getAttribute('data-id');
 
                 if (!tituloElemento || !imgElemento) return;
 
                 const productoElegido = {
-                    id: 'prod_' + index,
+                    id: 'prod_' + idProducto, 
                     title: tituloElemento.innerText,
                     price: precioLimpio,
                     image: imgElemento.getAttribute('src'),
@@ -211,18 +267,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ========================================================
-    // VALIDACIÓN Y ENVÍO DE CONTACTO (SITUACIÓN REAL DE TU HTML)
+    // VALIDACIÓN Y ENVÍO DE CONTACTO
     // ========================================================
-    // Buscamos el formulario exactamente como está estructurado en tu sección de contacto
     const formularioContacto = document.querySelector('.contacto-section form');
     const modalContacto = document.getElementById('contact-modal');
     const botonCerrarContacto = document.getElementById('btn-contact-close');
 
     if (formularioContacto) {
         formularioContacto.addEventListener('submit', function(e) {
-            e.preventDefault(); // Frena la salida a la página de Formspree
+            e.preventDefault(); 
 
-            // Usamos los IDs exactos de tus inputs: nombre, email, mensaje
             const nombre = document.getElementById('nombre').value.trim();
             const email = document.getElementById('email').value.trim();
             const mensaje = document.getElementById('mensaje').value.trim();
@@ -238,7 +292,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Envío invisible usando los datos reales de tu formulario
             const formData = new FormData(formularioContacto);
 
             fetch(formularioContacto.action, {
@@ -250,8 +303,8 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => {
                 if (response.ok && modalContacto) {
-                    modalContacto.style.display = 'flex'; // Abre el modal del avioncito
-                    formularioContacto.reset(); // Limpia tus campos
+                    modalContacto.style.display = 'flex'; 
+                    formularioContacto.reset(); 
                 } else {
                     alert("Hubo un problema al procesar el envío.");
                 }
@@ -267,6 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modalContacto.style.display = 'none';
         });
     }
+
     // ========================================================
     // MENÚ HAMBURGUESA RESPONSIVE
     // ========================================================
@@ -275,11 +329,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuToggle && mainNav) {
         menuToggle.addEventListener('click', () => {
-            // Alterna la clase 'active' que creamos en el CSS para mostrar/ocultar
             mainNav.classList.toggle('active');
         });
 
-        // Opcional: Cierra el menú automáticamente cuando el usuario toca un enlace de navegación
         const enlacesNav = mainNav.querySelectorAll('a');
         enlacesNav.forEach(enlace => {
             enlace.addEventListener('click', () => {

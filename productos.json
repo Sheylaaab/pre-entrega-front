@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "title": "Megumi Fushiguro - Jujutsu Kaisen",
+    "description": "Figura premium esculpida en resina de alta definición. Escala 1/10 con base temática.",
+    "price": 45000,
+    "image": "img/productos1.jpeg"
+  },
+
+  {
+    "id": 2,
+    "title": "Roronoa Zoro (Wano) - One Piece",
+    "description": "Estatua de resina de alta resistencia con detalles quirúrgicos en sus tres katanas.",
+    "price": 48000,
+    "image": "img/producto2.jpeg"
+  },
+
+ {
+    "id": 3,
+    "title": "Chainsaw Man - Power",
+    "description": "Figura de resina premium con excelente nivel de detalle y pintura artesanal.",
+    "price": 43000,
+    "image": "img/producto3.jpeg"
+  },
+  {
+    "id": 4,
+    "title": "Satoru Gojo (Infinite) - Jujutsu Kaisen",
+    "description": "Edición especial coleccionista con acabado premium texturizado y detalles traslúcidos.",
+    "price": 52000,
+    "image": "img/producto4.jpeg"
+  },
+  
+ 
+  
+  {
+    "id": 5,
+    "title": "Tomie - Junji Ito Collection",
+    "description": "Figura de resina basada en el icónico arte de terror de Junji Ito. Acabado detallado y sombrío.",
+    "price": 47000,
+    "image": "img/producto6.jpeg"
+  },
+  {
+    "id": 6,
+    "title": "Monkey D. Luffy (Gear 5) - One Piece",
+    "description": "Estatua de resina premium capturando la transformación legendaria con efectos dinámicos.",
+    "price": 55000,
+    "image": "img/producto5.jpeg"
+  }
+]
