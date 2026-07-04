@@ -1,48 +1,20 @@
-<<<<<<< HEAD
+# Toy Theory - E-commerce de Figuras 3D
+
 El desarrollo de este sitio web se centró en la creación de una interfaz funcional y estética cuyo objetivo principal fue construir una plataforma que reflejara la precisión del trabajo en resina, priorizando la claridad del código y la prolijidad visual.
 
-La estructura se organizó bajo estándares semánticos de HTML5, lo que me permitió segmentar el contenido de forma lógica. Utilicé etiquetas como <header>, <nav>, <main> y <section> para asegurar que el documento tuviera una jerarquía clara. Esta decisión no fue solo estética, sino técnica ya que facilita el mantenimiento del código, mejora el SEO y asegura la futura escalabilidad del proyecto. Cada producto del catálogo fue contenido en bloques específicos, permitiendo que la información técnica y las imágenes mantuvieran una relación de dependencia ordenada. 
+La estructura se organizó bajo estándares semánticos de HTML5, lo que me permitió segmentar el contenido de forma lógica. Utilicé etiquetas como `<header>`, `<nav>`, `<main>`, `<section>` y `<footer>` para asegurar que el documento tuviera una jerarquía clara. Esta decisión no fue solo estética, sino técnica ya que facilita el mantenimiento del código, mejora el SEO y asegura la futura escalabilidad del proyecto. Cada producto del catálogo fue contenido en bloques específicos, permitiendo que la información técnica y las imágenes mantuvieran una relación de dependencia ordenada. 
 
-Para resolver los desafíos técnicos que surgieron durante el proceso utilicé recursos digitales como tutoriales de YouTube para profundizar en la lógica de contenedores e integré la ayuda de la Inteligencia Artificial para corregir errores específicos de sintaxis y optimizar la cascada de estilos Esta metodología me permitió resolver problemas puntuales ycomprender la lógica detrás de cada solución, especialmente en la implementación de funciones avanzadas que requerían una precisión milimétrica y que no habia comprendido del todo.
+Para resolver los desafíos técnicos que surgieron durante el proceso utilicé recursos digitales como tutoriales de YouTube para profundizar en la lógica de contenedores e integré la ayuda de la Inteligencia Artificial para corregir errores específicos de sintaxis, solucionar bloqueos con las políticas de seguridad (CORS) y optimizar la cascada de estilos. Esta metodología me permitió resolver problemas puntuales y comprender la lógica detrás de cada solución, especialmente en la implementación de funciones avanzadas que requerían una precisión milimétrica y que no había comprendido del todo, como el uso de la Fetch API para cargar mis productos de forma dinámica desde un archivo JSON local y lograr que el carrito guarde su estado de forma definitiva en el LocalStorage.
 
-Para la maquetación, el eje central fue el uso de Flexbox, una herramienta que resultó clave para resolver la distribución del encabezado y la alineación del catálogo. Gracias a esto, logré que elementos como el logo, el menú de navegación y el carrito de compras convivan en perfecta simetría, manteniendo la estabilidad del diseño incluso cuando el contenido varía en extensión.
+Para la maquetación, el eje central fue el uso de Flexbox, una herramienta que resultó clave para resolver la distribución del encabezado y la alineación del catálogo. Gracias a esto, logré que elementos como el logo, el menú de navegación y el carrito de compras convivan en perfecta simetría, manteniendo la estabilidad del diseño incluso cuando el contenido varía en extensión. Además, para la sección de "Reseñas" incorporé la lógica de CSS Grid, logrando una distribución de tarjetas simétrica y ordenada para las opiniones de los clientes.
 
 En cuanto a la parte visual trabajé profundamente en la jerarquía tipográfica mediante CSS e implementé fuentes de Google Fonts, ajustando cuidadosamente los pesos (font-weight) y tamaños para guiar la lectura del usuario. Los títulos H1 y H2 fueron configurados para captar la atención inmediata, mientras que para las especificaciones técnicas utilicé variables tipográficas más ligeras que facilitan la lectura prolongada.
 
-Para la representación visual de los productos y el entorno técnico de la marca, se llevó a cabo una etapa de investigación y selección de imágenes en la plataforma Pinterest. La elección de estos recursos no fue aleatoria; se buscó material fotográfico que mantuviera una coherencia estética con los valores de Toy Theory, enfocándose en capturas que resaltaran el nivel de detalle, la textura de la resina y la atmósfera tecnológica de los laboratorios de impresión 3D. Este proceso de curaduría fue fundamental para garantizar que el diseño de la interfaz, basado en líneas limpias y colores neutros, se integrara de manera armónica con las piezas exhibidas, logrando así un impacto visual profesional que refuerza la identidad de la plataforma.
+Para la representación visual de los productos y el entorno técnico de la marca, se llevó a cabo una etapa de investigación y selección de imágenes en la plataforma Pinterest. La elección de estos recursos no fue aleatoria; se buscó material fotográfico que mantuviera una coherencia estética con los valores de Toy Theory, enfocándose en capturas que resaltaran el nivel de detalle, la textura de la resina y la atmósfera tecnológica de los laboratorios de impresión 3D. Este proceso de curaduría fue fundamental para garantizar que el diseño de la interfaz, basado en líneas limpias y colores neuros, se integrara de manera armónica con las piezas exhibidas, logrando así un impacto visual profesional que refuerza la identidad de la plataforma.
 
-Un punto crítico del desarrollo de este proyecto fue la creación del carrito de compras con contador, en donde, para lograr que el número de productos se ubicara sobre el ícono sin desplazarlo, utilicé posicionamiento relativo en el contenedor padre y posicionamiento absoluto en el contador rojo. Este detalle, sumado a la suavidad de las transiciones en los botones y enlaces, elevo la experiencia del sitio ya que antes era estático.
+Un punto crítico del desarrollo de este proyecto fue la creación del carrito de compras con contador, en donde, para lograr que el número de productos se ubicara sobre el ícono sin desplazarlo, utilicé posicionamiento relativo en el contenedor padre y posicionamiento absoluto en el contador. Este detalle, sumado a la suavidad de las transiciones en los botones y enlaces, elevó la experiencia del sitio ya que antes era estático. 
 
+Finalmente, el proyecto incluyó la implementación de Media Queries a través de la inspección de elementos y pruebas de resolución, en donde definí puntos de quiebre para asegurar que el sitio fuera Responsive. Esto implicó reconfigurar las direcciones de los flujos de Flexbox (de row a column) y adaptar la cuadrícula de Grid en dispositivos móviles para garantizar que el usuario tenga una experiencia óptima sin importar si accede desde una computadora o un celular. Como complemento multimedia e interactivo para el usuario, sumé un mapa mediante un iframe de Google Maps en la zona de contacto para simular el showroom y vinculé el formulario con Formspree para que los mensajes lleguen de forma real.
 
-Finalmente, el proyecto incluyó la implementación de Media Queries a través de la inspección de elementos y pruebas de resolución, en donde definí puntos de quiebre para asegurar que el sitio fuera Responsive. Esto implicó reconfigurar las direcciones de los flujos de Flexbox (de row a column) en dispositivos móviles para garantizar que el usuario tenga una experiencia óptima sin importar si accede desde una computadora o un celular.
-=======
-Toy Theory - E-commerce de Impresión 3D
-
-Este proyecto consiste en el desarrollo de una pagina web para Toy Theory, un emprendimiento especializado en la impresión 3D de figuras en resina de alta calidad. El sitio fue diseñado para ofrecer una experiencia visual limpia y profesional, resaltando el nivel de detalle de las piezas.
-
-
-🛠️ Tecnologías Utilizadas
-
-HTML5: Estructura semántica del sitio para optimizar el SEO y la accesibilidad.
-
-CSS3: Estilizacion avanzada, incluyendo el uso de variables tipográficas y transiciones.
-
-Flexbox & Grid: Implementación de layouts flexibles y dinámicos para el catálogo y la navegación.
-
-Diseño Responsive: Adaptabilidad del sitio mediante Media Queries para dispositivos móviles y tablets.
-
-
-🚀 Características del Proyecto
-
-Navegación Intuitiva: Menú de acceso rápido con secciones de Inicio, Catálogo y Contacto.
-
-Carrito de Compras: Simulación de un sistema de carrito con un contador de notificaciones posicionado dinámicamente.
-
-Catálogo Detallado: Exhibición de productos organizada mediante una grilla que prioriza la imagen y la descripción técnica.
-
-Estética Coherente: Curaduría visual realizada con recursos de Pinterest para mantener una línea de diseño profesional y tecnológica.
-
-📚 Proceso de Desarrollo
-
-El sitio fue construido siguiendo un proceso de aprendizaje iterativo. Durante la maquetación se priorizó la jerarquía visual y la prolijidad del código. Para resolver desafíos técnicos específicos, como el posicionamiento de elementos interactivos y la adaptabilidad de la interfaz, se utilizaron recursos de documentación externa, tutoriales especializados y asistencia de IA para la optimización de los estilos CSS.
->>>>>>> 811f71593068f50b265be788f128e488c55da781
+## 🔗 Link del proyecto en internet
+Podes ver el sitio web funcionando acá: [https://sheylaaab.github.io/pre-entrega-front/](https://sheylaaab.github.io/pre-entrega-front/)
